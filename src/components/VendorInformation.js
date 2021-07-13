@@ -10,8 +10,10 @@ const VendorInformation = props => {
                 <span className='px-1' style={{ fontWeight: 600, fontSize: 16 }}>Vendor Information</span>
                 {!edit && <Button text={"Add New Vendor Information"} icon={"fa fa-plus-square"} handleShow={handleShow} />}
             </div>
-            <div className=' my-2' style={{ borderRadius: 10, background: '#10173a' }}>
-                <div className='d-flex justify-content-between p-3 align-items-center' style={{ fontSize: 13, fontWeight: 500, color: 'gray' }}>
+            <div className=' my-2' style={{ borderRadius: 10 }}>
+                {
+                    edit &&
+                <div className='d-flex justify-content-between p-3 align-items-center' style={{ fontSize: 13, fontWeight: 500, color: 'gray', background: '#10173a',borderTopLeftRadius: 10, borderTopRightRadius: 10  }}>
                     <div className='px-2 col-1  '>
                         Logo
                     </div>
@@ -24,15 +26,15 @@ const VendorInformation = props => {
                     <div className='px-2 col '>
                         Contact Person
                     </div>
-                    {
-                        edit &&
-                        <div className='px-2 col-3'>
 
-                        </div>
-                    }
+                    <div className='px-2 col-3'>
+
+                    </div>
                 </div>
+                }
+                
 
-                <div className='' style={{ background: '#293365', fontSize: 11, borderBottomRightRadius: 10, borderBottomLeftRadius: 10 }}>
+                <div className='' style={{  fontSize: 11, borderBottomRightRadius: 10, borderBottomLeftRadius: 10 }}>
                     {
                         InformationCardList && InformationCardList.map((c, index) => {
                             return (
@@ -56,7 +58,7 @@ const InformationCard = ({ image, name, address, contactPerson, phno, edit, key,
         <>
             {
                 edit ?
-                    <div className='d-flex justify-content-around p-2 align-items-center align-self-center' style={{ borderTop: `${index === 0 ? "none" : '1px solid gray'}` }}>
+                    <div className='d-flex justify-content-around p-2 align-items-center align-self-center' style={{ borderTop: `${index === 0 ? "none" : '1px solid gray'}`, background: '#293365',borderBottomLeftRadius: index == 0 ? 0 : 10, borderBottomRightRadius:index == 0 ? 0 : 10 }}>
                         <div className='col-1  d-flex justify-content-center h-100' style={{ marginLeft: -3 }}>
                             <img src={image} alt="Card-logo" style={{ maxWidth: 40 }} />
                         </div>
@@ -81,8 +83,8 @@ const InformationCard = ({ image, name, address, contactPerson, phno, edit, key,
 
                     </div>
                     :
-                    <div className='d-flex my-2 ' style={{ borderRadius: 10, background: '#10173a', }}>
-                        <div className='col-5 d-flex justify-content-center align-self-center h-100 ' style={{ borderTopLeftRadius: 10, borderBottomLeftRadius: 10 }}>
+                    <div className='d-flex my-2 ' style={{ borderRadius: 10, background: '#10173a',borderTopLeftRadius: 10, borderBottomLeftRadius: 10 }}>
+                        <div className='col-5 d-flex justify-content-center align-self-center h-100 ' style={{  }}>
                             <img src={image} alt="Card-logo" style={{ maxWidth: 150 }} />
                         </div>
                         <div className='col-7 p-1' style={{ background: '#293365', borderTopRightRadius: 10, borderBottomRightRadius: 10 }}>

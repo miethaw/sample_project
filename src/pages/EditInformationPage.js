@@ -28,7 +28,7 @@ const EditInformationPage = () => {
           <SensorStatus edit={location.includes('edit') ? true : false} />
           
         </div>
-        <div className='col-xl-5 flex-fill' style={{ minWidth: 350 }}>
+        <div className='col-xl-7 flex-fill' style={{ minWidth: 350 }}>
           <VendorInformation edit={location.includes('edit') ? true : false} />
          
         </div>
